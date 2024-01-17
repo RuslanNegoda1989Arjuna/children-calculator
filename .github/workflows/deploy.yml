@@ -17,6 +17,11 @@ jobs:
           npm run lint:js
           npm run build
 
+      - name: Show repository contents
+        run: |
+          echo "Repository contents:"
+          ls -a
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
