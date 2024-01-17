@@ -37,9 +37,10 @@ const Calculate = () => {
           );
         })}
       </StaircaseContainer>
-      <OperationButtonContainer>
-        <OperationButton onClick={handleAdd}>+1</OperationButton>
-        <OperationButton onClick={handleSubtract}>-1</OperationButton>
+          <OperationButtonContainer>
+            <OperationButton onClick={handleSubtract}>-1</OperationButton>
+            <OperationButton onClick={handleAdd}>+1</OperationButton>
+        
       </OperationButtonContainer>
     </CalculatorContainer>
   );
