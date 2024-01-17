@@ -1,17 +1,13 @@
 // Calculate.jsx
 import React, { useState } from 'react';
 import { CalculatorContainer, StaircaseContainer, StairButton, OperationButtonContainer, OperationButton, BUTTON_SIZE } from './CalculatorTo10.styled';
-// import { BUTTON_SIZE } from './CalculatorTo10.styled';
 
 const Calculate = () => {
-    const [value, setValue] = useState(0);
-    console.log(value)
+  const [value, setValue] = useState(0);
 
-    const handleNumberClick = (num) => {
+  const handleNumberClick = (num) => {
     setValue(num);
-
-    };
-
+  };
 
   const handleAdd = () => {
     setValue((prev) => (prev < 10 ? prev + 1 : prev));
@@ -22,20 +18,19 @@ const Calculate = () => {
   };
 
   return (
-      <CalculatorContainer>
-        
+    <CalculatorContainer>
       <StaircaseContainer>
         {[...Array(10)].map((_, index) => {
-            const num = 10 - index;
+          const num = 10 - index;
+          const marginLeft = value === 1 ? 180 : (num - 1) * BUTTON_SIZE;
 
           return (
             <StairButton
               key={num}
               active={value === num}
               level={index + 1}
-                  onClick={() => handleNumberClick(num)}
-                  
-              style={{ marginLeft: (value === 1 ? 0 : (num - 1) * BUTTON_SIZE) }}
+              onClick={() => handleNumberClick(num)}
+              style={{ marginLeft }}
             >
               {num}
             </StairButton>
